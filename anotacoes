@@ -6,3 +6,5 @@ docker build -t my-first-container:latest .
 
 Run container:
 docker run --interactive --tty my-first-container
+################################################
+docker run docker/whalesay cowsay "Hey all OK"
