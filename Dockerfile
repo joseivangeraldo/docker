@@ -1,7 +1,13 @@
-FROM debian:latest
+FROM python:3.10-alpine
 
-COPY . .  
+WORKDIR /app  
 
-RUN apt update && apt install iputils-ping -y
+RUN apk update 
 
-CMD ["echo" , "Hello World!!"]
+COPY requirements.txt requirements.txt
+
+COPY app.py appy.py
+
+RUN pip install -r requirements.txt
+
+CMD ["python", "app.py"]
