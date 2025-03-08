@@ -1,0 +1,8 @@
+Learning Docker // Build Container Images  -- [baseado neste video do youtube](https://www.youtube.com/watch?v=JDw3ZdQcv2g)   
+
+
+executar o Dockerfile:
+docker build -t my-first-container:latest .
+
+Run container:
+docker run --interactive --tty my-first-container
