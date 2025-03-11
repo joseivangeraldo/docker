@@ -1,14 +1,3 @@
-Learning Docker // Build Container Images  -- [baseado neste video do youtube](https://www.youtube.com/watch?v=JDw3ZdQcv2g)   
-
-    
-executar o Dockerfile:
-docker build -t my-first-container:latest .
-
-Run container:
-docker run --interactive --tty my-first-container
-################################################
-docker run docker/whalesay cowsay "Hey all OK"
-
 ######ANOTHER COURSE #######################
 
 docker run = Start a container 
@@ -26,7 +15,21 @@ $ docker run  nginx:latest
 $ docker run -d nginx:latest
 
 EXPOSING PORTS:
-docker run -d -p 8080:80 nginx:latest]
+docker run -d -p 8080:80 nginx:latest
 
 EXPOSING MULTIPLE PORTS:
+docker run -d -p 3000:80 -p 8080:80 nginx:latest
+
+MANAGING CONTAINERS
+$ docker rm $(docker ps -aq)
+
+NAMING CONTAINERS
+$ docker run --name website -d -p 3000:80 -p 8080:80 nginx:latest
+
+MOST REPLAYED
+"ID\t{{.ID}}\nNAME\t{{.Names}}\nImage\t{{.Image}}\nPORTS\t{{.Ports}}\nCOMMAND\t{{.Command}}\nCREATED\t{{.CreatedAt}}\nSTATUS\t{{.Status}}\n"
+
+$ docker ps --format="ID\t{{.ID}}\nNAME\t{{.Names}}\nImage\t{{.Image}}\nPORTS\t{{.Ports}}\nCOMMAND\t{{.Command}}\nCREATED\t{{.CreatedAt}}\nSTATUS\t{{.Status}}\n"
+
+DOCKER VOLUMES
 
