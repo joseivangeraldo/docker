@@ -20,3 +20,13 @@ docker images = lista das imagens
 docker rmi = remover imagens
 docker pull = download a imagem
 
+$ docker pull nginx
+RUNNNIG A CONTAINER FROM Images
+$ docker run  nginx:latest
+$ docker run -d nginx:latest
+
+EXPOSING PORTS:
+docker run -d -p 8080:80 nginx:latest]
+
+EXPOSING MULTIPLE PORTS:
+
