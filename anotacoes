@@ -8,3 +8,15 @@ Run container:
 docker run --interactive --tty my-first-container
 ################################################
 docker run docker/whalesay cowsay "Hey all OK"
+
+######ANOTHER COURSE #######################
+
+docker run = Start a container 
+docker ps  = lista todos os containers que estão rodando
+docker ps -a = lista todos os containers
+docker stop = para o container
+docker rm = remover o container
+docker images = lista das imagens
+docker rmi = remover imagens
+docker pull = download a imagem
+
