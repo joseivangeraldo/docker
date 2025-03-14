@@ -44,4 +44,4 @@ To preview the changes you make to the code, you can open the index.html file in
 
 SHARING VOLUME BETWEEN CONTAINERS
 $ docker run --name website-copy --volumes-from website -d -p 9000:80 nginx:latest
-
+$ docker exec -it website bash
