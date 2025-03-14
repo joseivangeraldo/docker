@@ -32,4 +32,16 @@ MOST REPLAYED
 $ docker ps --format="ID\t{{.ID}}\nNAME\t{{.Names}}\nImage\t{{.Image}}\nPORTS\t{{.Ports}}\nCOMMAND\t{{.Command}}\nCREATED\t{{.CreatedAt}}\nSTATUS\t{{.Status}}\n"
 
 DOCKER VOLUMES
+CRIAR DIRETORIO --> website
+$ docker run --name website -d -p 3000:80 -v $(pwd):/usr/share/nginx/html:ro nginx:latest
+
+CUSTOMISE WEBSITE
+PESQUISAR BOOTSTRAP SINGLE PAGE TEMPLATE
+Basic Usage
+After downloading, simply edit the HTML and CSS files included with dist directory.
+These are the only files you need to worry about, you can ignore everything else! 
+To preview the changes you make to the code, you can open the index.html file in your web browser.
+
+SHARING VOLUME BETWEEN CONTAINERS
+$ docker run --name website-copy --volumes-from website -d -p 9000:80 nginx:latest
 
