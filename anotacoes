@@ -35,6 +35,10 @@ DOCKER VOLUMES
 CRIAR DIRETORIO --> website
 $ docker run --name website -d -p 3000:80 -v $(pwd):/usr/share/nginx/html:ro nginx:latest
 
+SHARING VOLUME BETWEEN CONTAINERS
+$ docker run --name website-copy --volumes-from website -d -p 9000:80 nginx:latest
+$ docker exec -it website bash
+
 CUSTOMISE WEBSITE
 PESQUISAR BOOTSTRAP SINGLE PAGE TEMPLATE
 Basic Usage
@@ -42,6 +46,49 @@ After downloading, simply edit the HTML and CSS files included with dist directo
 These are the only files you need to worry about, you can ignore everything else! 
 To preview the changes you make to the code, you can open the index.html file in your web browser.
 
-SHARING VOLUME BETWEEN CONTAINERS
-$ docker run --name website-copy --volumes-from website -d -p 9000:80 nginx:latest
-$ docker exec -it website bash
+CREATING DOCKERFILE
+FROM nginx:latest
+ADD . /usr/share/nginx/html
+
+BUILDING IMAGES
+$ docker build --tag website:latest .
+$ docker run --name website -p 8080:80 -d website:latest
+
+NODE AND JS
+$ mkdir user-service-api
+$ node --version
+
+$ npm install --save express
+$ node index.js
+
+EXEMPLO HELLO WORLD (NODE JS)
+const express = require('express')
+const app = express()
+const port = 3000
+
+app.get('/', (req, res) => {
+  res.send('Hello World!')
+})
+
+app.listen(port, () => {
+  console.log(`Example app listening on port ${port}`)
+})
+
+CRIADO UM ARRAY DE JSON
+const express = require('express')
+const app = express()
+const port = 3000
+
+app.get('/', (req, res) => {
+  res.json([{
+    name: 'Bob',
+    email: 'bob@gmail.com'
+
+  }])
+})
+
+app.listen(port, () => {
+  console.log(`Example app listening on port ${port}`)
+})
+
+
