@@ -91,4 +91,14 @@ app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 })
 
+DOCKERFILE FOR NODE JS
+FROM node:latest
+WORKDIR /app
+ADD . .
+RUN npm install
+CMD node insdex.js
+
+RUN NODE JS AND APP CONTAINER
+
+
 
