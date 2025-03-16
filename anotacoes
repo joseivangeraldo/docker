@@ -101,5 +101,9 @@ ADD . .
 RUN npm install
 CMD node insdex.js
 
+RUNNING NODE JS APP CONTAINER
+$ docker image ls
+$ docker run --name user-api -d -p 3000:3000 user-service-api:latest
+
 
 
