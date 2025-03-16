@@ -55,6 +55,7 @@ $ docker build --tag website:latest .
 $ docker run --name website -p 8080:80 -d website:latest
 
 NODE AND JS
+
 $ mkdir user-service-api
 $ node --version
 
@@ -65,6 +66,8 @@ EXEMPLO HELLO WORLD (NODE JS)
 const express = require('express')
 const app = express()
 const port = 3000
+
+RUN NODE JS AND APP CONTAINER
 
 app.get('/', (req, res) => {
   res.send('Hello World!')
@@ -97,8 +100,6 @@ WORKDIR /app
 ADD . .
 RUN npm install
 CMD node insdex.js
-
-RUN NODE JS AND APP CONTAINER
 
 
 
