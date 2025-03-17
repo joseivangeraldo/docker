@@ -106,5 +106,27 @@ $ docker image ls
 $ docker run --name user-api -d -p 3000:3000 user-service-api:latest
 
 .DOCKERIGNORE
+Não copiar aqrquivos que ja vao ser criados
+criar arquivo .dockerignore:
+
+node_modules
+Dockerfile
+.git
+$ docker build -t user-service-api:latest .
+
+CACHING AND LAYERS
+PARA DEMONSTRAR INSTALANDO PACOTES QUE NÃO PRECISO
+$ npm i -S react webpack gulp grunt
+
+FROM node:latest
+WORKDIR /app
+ADD package*.json ./
+RUN npm install
+ADD . .
+CMD node index.js
+
+$ docker run --name user-api -d -p 3000:3000 user-service-api:latest
+
+
 
 
