@@ -127,6 +127,10 @@ CMD node index.js
 
 $ docker run --name user-api -d -p 3000:3000 user-service-api:latest
 
+ALPINE:
+PULLING ALPINE DOCKER
+Baixar as vrsões que são baseadas em alpine.Porque são mais leves
+$ docker pull nginx:alpine
+$ docker pull node:lts-alpine
 
-
-
+SWITCHING TO ALPINE
