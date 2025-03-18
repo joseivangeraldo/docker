@@ -131,6 +131,15 @@ ALPINE:
 PULLING ALPINE DOCKER
 Baixar as vrsões que são baseadas em alpine.Porque são mais leves
 $ docker pull nginx:alpine
-$ docker pull node:lts-alpine
+$ docker pull node:alpine
 
-SWITCHING TO ALPINE
+SWITCHING TO ALPINE:
+
+FROM node:alpine
+WORKDIR /app
+ADD package*.json ./
+RUN npm install
+ADD . .
+CMD node index.js
+
+
