@@ -13,5 +13,6 @@ $ docker build -t user-service-api:latest .
 
 TAGS AND VERSIONING:
 Control about the aplications
+USING TAGS:
 
 
