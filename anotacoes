@@ -142,4 +142,39 @@ RUN npm install
 ADD . .
 CMD node index.js
 
+FROM node:10.16.1-alpine
+WORKDIR /app
+ADD package*.json ./
+RUN npm install
+ADD . .
+CMD node index.js
+
+FROM nginx:alpine
+ADD . /usr/share/nginx/html
+
+$ docker build -t website:latest .
+$ docker build -t user-service-api:latest .
+
+TAGS AND VERSIONING:
+Control about the aplications
+USING TAGS:
+
+ FROM nginx:1.17.2-alpine
+ADD . /usr/share/nginx/html
+  
+FROM node:10.16.1-alpine
+WORKDIR /app
+ADD package*.json ./
+RUN npm install
+ADD . .
+CMD node index.js
+
+RUNING CONTAINERS USING TAGS:
+$ docker build  -t website:latest .
+$ docker build  -t user-service-api:latest 
+
+$ docker run --name website -d -p 8080:80 website:latest
+$ docker run --name user-api -d -p 3000:3000 user-service-api:latest
+
+TAGGING OVERRIDE:
 
