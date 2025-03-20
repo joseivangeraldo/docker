@@ -177,4 +177,19 @@ $ docker run --name website -d -p 8080:80 website:latest
 $ docker run --name user-api -d -p 3000:3000 user-service-api:latest
 
 TAGGING OVERRIDE:
+FROM nginx:1-alpine
+ADD . /usr/share/nginx/html
 
+FROM node:10.16.1-alpine
+WORKDIR /app
+ADD package*.json ./
+RUN npm install
+ADD . .
+$ docker build -t amigoscode-website:latest .
+$ docker tag amigoscode-website:latest amigoscode:1
+$ docker tag amigoscode-website:latest amigoscode-website:2
+
+RUNNING CONTAINERS USING TAGS
+$ docker run --name amigoscode-latest -p 8080:80 -d amigoscode-website:latest
+$ docker run --name amigos
+code-2 -p 8081:80 -d amigoscode-website:2
