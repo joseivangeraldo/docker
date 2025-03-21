@@ -191,5 +191,13 @@ $ docker tag amigoscode-website:latest amigoscode-website:2
 
 RUNNING CONTAINERS USING TAGS
 $ docker run --name amigoscode-latest -p 8080:80 -d amigoscode-website:latest
-$ docker run --name amigos
-code-2 -p 8081:80 -d amigoscode-website:2
+$ docker run --name amigoscode-2 -p 8081:80 -d amigoscode-website:2
+
+$ docker login
+
+EXPORT IMPORT CONTAINERS
+$ docker export amigoscode-latest > amigoscode-website-latest.zip
+$ docker import - my_name_choosen < myfile.zip
+APOS DESCOMPACTADA E CRIADA A IMAGEM VAMOS EXECUTAR
+
+$ docker run -it my_name_choosen /bin/bash
