@@ -207,3 +207,14 @@ amigoscode/website
 DOCKER INSPECT
 $ docker start 1ffe1688dd18
 $ docker inspect 1ffe1688dd18
+
+DOCKER LOGS;
+$ docker logs 1ffe1688dd18
+$ docker logs -f 1ffe1688dd18 --> -f é de follow, mostra em tempo real no console
+docker logs --help
+
+BASH INTO CONTAINERS:
+$ docker inspect 6b21c254f970  --> procurar por Cmd
+$ docker start 6b21c254f970
+$ docker exec -it 6b21c254f970 /bin/sh
+
