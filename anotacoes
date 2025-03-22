@@ -203,3 +203,7 @@ APOS DESCOMPACTADA E CRIADA A IMAGEM VAMOS EXECUTAR
 $ docker run -it my_name_choosen /bin/bash
 
 amigoscode/website
+
+DOCKER INSPECT
+$ docker start 1ffe1688dd18
+$ docker inspect 1ffe1688dd18
